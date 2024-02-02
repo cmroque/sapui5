@@ -13,7 +13,7 @@
                                     value="{/recipient/name}"
                                     description="Hello {/recipient/name}"
                                     valueLiveUpdate="true"
-                                    width="60%"
+                                    width="80%"
                                 />
                             </content>
                         </Panel>
