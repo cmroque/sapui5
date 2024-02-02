@@ -12,25 +12,25 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("testproject.testproject.controller.Homepage", {
-            onInit: function () {
-                //set data model on view
-                var oData = {
-                    recipient : {
-                        name : "World"
-                    }
-                }
+            // onInit: function () {
+            //     //set data model on view
+            //     var oData = {
+            //         recipient : {
+            //             name : "World"
+            //         }
+            //     }
                 
-                var oModel = new JSONModel(oData);
-                this.getView().setModel(oModel);
+            //     var oModel = new JSONModel(oData);
+            //     this.getView().setModel(oModel);
                 
-                // set i18n model on view
-                var i18nModel = new ResourceModel({
-                    bundleName: "testproject.testproject.i18n.i18n"
-                });
+            //     // set i18n model on view
+            //     var i18nModel = new ResourceModel({
+            //         bundleName: "testproject.testproject.i18n.i18n"
+            //     });
 
-                this.getView().setModel(i18nModel,"i18n");
+            //     this.getView().setModel(i18nModel,"i18n");
 
-            },
+            // },
             
             onShowHello: function () {
                 

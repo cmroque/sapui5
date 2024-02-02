@@ -4,11 +4,12 @@
         "id": "testproject.testproject",
         "type": "application",
         "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
         "applicationVersion": {
             "version": "0.0.1"
         },
-        "title": "{{appTitle}}",
-        "description": "{{appDescription}}",
+        
         "resources": "resources.json",
         "sourceTemplate": {
             "id": "@sap/generator-fiori:basic",
@@ -65,7 +66,9 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "testproject.testproject.i18n.i18n"
+                    "bundleName": "testproject.testproject.i18n.i18n",
+                    "supportedLocales": [""],
+                    "fallbackLocale": ""
                 }
             },
             "": {
