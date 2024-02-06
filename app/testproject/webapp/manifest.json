@@ -95,13 +95,12 @@
         },
         "routing": {
             "config": {
-                "routerClass": "sap.m.routing.Router",
-                "viewType": "XML",
-                "async": true,
-                "viewPath": "testproject.testproject.view",
-                "controlAggregation": "pages",
-                "controlId": "app",
-                "clearControlAggregation": false
+              "routerClass": "sap.m.routing.Router",
+              "type": "View",
+              "viewType": "XML",
+              "path": "testproject.testproject.view",
+              "controlId": "app",
+              "controlAggregation": "pages"
             },
             "routes": [
                 {
@@ -110,6 +109,16 @@
                     "target": [
                         "TargetHomepage"
                     ]
+                },
+                {
+                    "pattern": "",
+                    "name": "overview",
+                    "target": "overview"
+                },
+                {
+                    "pattern": "detail/{invoicePath}",
+                    "name": "detail",
+                    "target": "detail"
                 }
             ],
             "targets": {
@@ -119,6 +128,14 @@
                     "clearControlAggregation": false,
                     "viewId": "Homepage",
                     "viewName": "Homepage"
+                },
+                "overview": {
+                    "id": "overview",
+                    "name": "Overview"
+                },
+                "detail": {
+                    "id": "detail",
+                    "name": "Detail"
                 }
             }
         },

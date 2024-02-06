@@ -2,18 +2,8 @@
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Shell>
-		<App class="myAppDemoWT">
-			<pages>
-				<Page title="{i18n>homePageTitle}">
-					<content>
-						<mvc:XMLView
-							viewName="testproject.testproject.view.HelloPanel"/>
-						<mvc:XMLView
-							viewName="testproject.testproject.view.InvoiceList"/>
-					</content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+    <App id="app">
+    </App>
+    <!-- <Text id="text" text= "Test"/> -->
+    <!-- <Button id="btn1" text="Press me" press="onPressBtn"/> -->
 </mvc:View>
