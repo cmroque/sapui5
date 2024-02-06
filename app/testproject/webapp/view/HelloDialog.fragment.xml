@@ -5,15 +5,31 @@
       id="helloDialog"
       title="Hello {/recipient/name}">
       <content>
+      <VBox >
          <core:Icon 
+            color="red"
             src="sap-icon://hello-world"
             size="8rem"
             class="sapUiMediumMargin"
          />
+         <core:Icon 
+            color="blue"
+            src="sap-icon://globe"
+            size="8rem"
+            class="sapUiMediumMargin"
+         />
+         <core:Icon 
+            color="green"
+            src="sap-icon://world"
+            size="8rem"
+            class="sapUiMediumMargin"
+         />
+      </VBox>
       </content>
       <beginButton>
          <Button
             text="{i18n>dialogCloseButtonText}"
+            icon="sap-icon://accept"
             press=".onCloseDialog"/>
       </beginButton>
    </Dialog>

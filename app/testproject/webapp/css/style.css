@@ -11,4 +11,19 @@ html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
     display: inline-block;
     font-weight: bold;
  }
+
+ .myInputText {
+   min-width: 100%;
+ }
+
+ .myHelloPanel > .sapMPanelHeadingDiv > .sapMPanelHdr {
+   height: 2.5rem !important;
+   display:flex;
+   align-items:center;
+ }
  
+ .myHelloPanel > .sapMPanelContent {
+   display:flex;
+   flex-direction: row;
+   align-items: center;
+ }
