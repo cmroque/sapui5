@@ -44,6 +44,9 @@ sap.ui.define([
                 const oDeviceModel = new JSONModel(Device);
                 oDeviceModel.setDefaultBindingMode("OneWay");
                 this.setModel(oDeviceModel, "device");
+            },
+            getContentDensityClass() {
+                return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
             }
         });
     }
