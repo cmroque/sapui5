@@ -41,8 +41,8 @@ sap.ui.define([
 			const fValue = oEvent.getParameter("value");
 			const oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
 
-			// MessageToast.show(oResourceBundle.getText("ratingConfirmation", [fValue]));
-			Swal.fire(oResourceBundle.getText("ratingConfirmation", [fValue]));
+			MessageToast.show(oResourceBundle.getText("ratingConfirmation", [fValue]));
+			// Swal.fire(oResourceBundle.getText("ratingConfirmation", [fValue]));
 		}
 	});
 });
