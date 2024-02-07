@@ -12,7 +12,8 @@ sap.ui.define([
           const sMsg = oBundle.getText("helloMsg", [sRecipient]);
  
           // show message
-          MessageToast.show(sMsg);
+          // MessageToast.show(sMsg);
+          Swal.fire(sMsg);
         },
 
         onOpenDialog() {
