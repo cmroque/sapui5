@@ -5,5 +5,5 @@ service CatalogService {
     entity tb_Books as projection on my.Books;
     entity tb_Items as projection on my.Items;
 
-    function get_Math() returns String;
+    function test() returns String;
 } 

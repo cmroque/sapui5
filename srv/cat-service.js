@@ -1,17 +1,20 @@
-const cds = require ('@sap/cds')
+const cds = require('@sap/cds')
 const axios = require('axios')
+// const cloudSDK = require('@sap-cloud-sdk/core')
 
 module.exports = cds.service.impl((srv) => {
-    
-    /*Start of backend functions */
-    srv.on('get_Math', async (req) => {
-        let x = 1;
-        let y = 2;
-        let z = x + y;
-        let name = 'SAP BTP';
-        let Array1 = [1,2,3,4,5];
-        return 'Hello World!' + z + ' ' + name
+    srv.on('test', async (req) => {
+        // let oDestination = await cloudSDK.getDestination("swapi")
+        // let oRequestConfig = await cloudSDK.buildHttpRequest(oDestination)
 
+        let callPeopleAPI = await axios.get('https://www.swapi.tech/api/people' , {
+            headers: {}
+        })
+        // let callPeopleAPI = await axios.get(oRequestConfig , {
+        //     headers: {}
+        // })
+        console.log(callPeopleAPI.data)
+        return JSON.stringify(callPeopleAPI.data)
     })
 
 })
