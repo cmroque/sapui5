@@ -4,6 +4,7 @@ const axios = require('axios')
 
 module.exports = cds.service.impl((srv) => {
     srv.on('test', async (req) => {
+        
         // let oDestination = await cloudSDK.getDestination("swapi")
         // let oRequestConfig = await cloudSDK.buildHttpRequest(oDestination)
 
