@@ -1,18 +1,20 @@
 namespace my.bookshop;
 
+using { managed } from '@sap/cds/common';
+
 entity Books {
   key ID : Integer;
   title  : String;
   stock  : Integer;
 }
-
+  
 entity Items {
   key ID : Integer;
   title  : String;
   stock  : Integer;
 }
 
-entity TB_CATALOG {
+entity TB_CATALOG : managed {
   key CATALOG_NAME : String(100);
   key SUPPLIER_ID : String(100);
   ACTIVATION_DATE : Timestamp;
@@ -20,7 +22,7 @@ entity TB_CATALOG {
   CATALOGITEM : Composition of many TB_CATALOGITEMS on CATALOGITEM.CATALOG = $self;
 }
 
-entity TB_CATALOGITEMS {
+entity TB_CATALOGITEMS : managed {
   key SUPPLIER_PART_ID : String(100);
     SUPPLIER_NAME : String(100);
     MANUFACTURER_PART_ID : String(100);
