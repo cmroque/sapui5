@@ -10,7 +10,7 @@ service CatalogService {
     entity tb_Books as projection on my.Books;
     entity tb_Items as projection on my.Items;
 
-    function test() returns String;
+    
     function getBook() returns String;
 } 
 

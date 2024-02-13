@@ -21,13 +21,19 @@ module.exports = cds.service.impl((srv) => {
         return JSON.stringify(callPeopleAPI.data)
 
     })
+    
+
 
     srv.on('getBook', async (req) => {
-        const { Books } = cds.entities
-        const response = await cds.read(Books)
+        const { tb_Books } = cds.entities
+        // const response = await cds.read(Books)
+
+        let Query = cds.parse.cql('SELECT * FROM MY_BOOKSHOP_BOOKS')
+        let response = await cds.run(Query)
+
         console.log(response)
         return JSON.stringify(response)
-        
+
         // let Data = {
         //     ID: 1,
         //     stock: 100,
