@@ -7,7 +7,7 @@ modules:
     type: nodejs
     path: gen/srv
     requires:
-      - name: books-hdi-service
+      - name: bootcamp-hana
     provides:
       - name: srv-api
         properties:
@@ -16,11 +16,11 @@ modules:
       buildpack: nodejs_buildpack
     build-parameters:
       builder: npm
-  - name: books-hdi-service-deployer
+  - name: bootcamp-hana-deployer
     type: hdb
     path: gen/db
     requires:
-      - name: books-hdi-service
+      - name: bootcamp-hana
     parameters:
       buildpack: nodejs_buildpack
   - name: UI5Tutorial-destination-content
@@ -79,7 +79,7 @@ modules:
       supported-platforms:
         []
 resources:
-  - name: books-hdi-service
+  - name: bootcamp-hana
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
