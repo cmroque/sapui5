@@ -1,31 +1,31 @@
 {
-    "name": "UI5Tutorial",
-    "version": "1.0.0",
-    "description": "A simple CAP project.",
-    "repository": "<Add your repository here>",
-    "license": "UNLICENSED",
-    "private": true,
-    "dependencies": {
-        "@sap/cds": "^7",
-        "@sap/cds-hana": "^2",
-        "express": "^4"
+    "name": "testproject",
+    "version": "0.0.1",
+    "description": "An SAP Fiori application.",
+    "keywords": [
+        "ui5",
+        "openui5",
+        "sapui5"
+    ],
+    "main": "webapp/index.html",
+    "scripts": {
+        "deploy-config": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf",
+        "build:cf": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateCachebusterInfo",
+        "start": "ui5 serve -o test/mockServer.html",
+        "build": "ui5 build --all --clean-dest",
+        "serve-dist": "ws --compress -d dist --open"
     },
     "devDependencies": {
-        "@cap-js/sqlite": "^1",
-        "@sap/cds-dk": "^7",
-        "@sap/ux-specification": "^1.120.2",
-        "rimraf": "^3.0.2"
+        "@sap/ui5-builder-webide-extension": "^1.1.8",
+        "ui5-task-zipper": "^0.5.0",
+        "mbt": "^1.2.18",
+        "@ui5/cli": "^2.14.10"
     },
-    "scripts": {
-        "start": "cds-serve",
-        "watch-testproject": "cds watch --open testproject/webapp/index.html?sap-ui-xx-viewCache=false",
-        "undeploy": "cf undeploy UI5Tutorial --delete-services --delete-service-keys --delete-service-brokers",
-        "build": "rimraf resources mta_archives && mbt build --mtar archive",
-        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
-    },
-    "cds": {
-        "requires": {
-            "db": "hana"
-        }
+    "ui5": {
+        "dependencies": [
+            "@sap/ui5-builder-webide-extension",
+            "ui5-task-zipper",
+            "mbt"
+        ]
     }
 }
