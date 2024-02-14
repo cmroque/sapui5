@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/ComponentContainer"],t=>{"use strict";new t({name:"testproject.testproject",settings:{id:"testproject.testproject"},async:true}).placeAt("content")});

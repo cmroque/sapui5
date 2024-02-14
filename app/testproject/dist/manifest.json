@@ -4,11 +4,11 @@
         "id": "testproject.testproject",
         "type": "application",
         "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
         "applicationVersion": {
             "version": "0.0.1"
         },
-        "title": "{{appTitle}}",
-        "description": "{{appDescription}}",
         "resources": "resources.json",
         "sourceTemplate": {
             "id": "@sap/generator-fiori:basic",
@@ -43,7 +43,7 @@
         }
     },
     "sap.ui5": {
-        "flexEnabled": true,
+        "flexEnabled": false,
         "dependencies": {
             "minUI5Version": "1.120.4",
             "libs": {
@@ -65,7 +65,11 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "testproject.testproject.i18n.i18n"
+                    "bundleName": "testproject.testproject.i18n.i18n",
+                    "supportedLocales": [
+                        ""
+                    ],
+                    "fallbackLocale": ""
                 }
             },
             "": {
@@ -77,6 +81,10 @@
                     "autoExpandSelect": true,
                     "earlyRequests": true
                 }
+            },
+            "invoice": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "Invoices.json"
             }
         },
         "resources": {
@@ -89,12 +97,11 @@
         "routing": {
             "config": {
                 "routerClass": "sap.m.routing.Router",
+                "type": "View",
                 "viewType": "XML",
-                "async": true,
-                "viewPath": "testproject.testproject.view",
-                "controlAggregation": "pages",
+                "path": "testproject.testproject.view",
                 "controlId": "app",
-                "clearControlAggregation": false
+                "controlAggregation": "pages"
             },
             "routes": [
                 {
@@ -103,6 +110,16 @@
                     "target": [
                         "TargetHomepage"
                     ]
+                },
+                {
+                    "pattern": "",
+                    "name": "overview",
+                    "target": "overview"
+                },
+                {
+                    "pattern": "detail/{invoicePath}",
+                    "name": "detail",
+                    "target": "detail"
                 }
             ],
             "targets": {
@@ -112,6 +129,14 @@
                     "clearControlAggregation": false,
                     "viewId": "Homepage",
                     "viewName": "Homepage"
+                },
+                "overview": {
+                    "id": "overview",
+                    "name": "Overview"
+                },
+                "detail": {
+                    "id": "detail",
+                    "name": "Detail"
                 }
             }
         },
