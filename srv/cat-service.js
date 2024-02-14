@@ -22,7 +22,16 @@ module.exports = cds.service.impl((srv) => {
 
     })
     
+    srv.on('getUsers', async (req) => {
+        const { Users } = cds.entities
 
+        let Query = cds.parse.cql('SELECT * FROM MY_BOOKSHOP_USERS')
+        let response = await cds.run(Query)
+
+        console.log(response)
+        return JSON.stringify(response)
+
+    })
 
     srv.on('getBook', async (req) => {
         const { tb_Books } = cds.entities
